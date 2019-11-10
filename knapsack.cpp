@@ -6,7 +6,33 @@
 #include <algorithm>
 #include<iomanip>
 using namespace std; 
-  
+ 
+ 
+int maximumTotalWeight(vector<int> weights, vector<int> tasks, int p) {
+
+    int n=weights.size();
+    vector<vector<int>> opt(n+1,vector<int>(p+1));
+
+    for (int i=0;i<tasks.size();i++){
+        tasks[i]*=2;
+    }
+    
+    for (int i=0;i<n+1;i++){
+        for(int j=0;j<p+1;j++){
+            if (i==0 or j==0){
+                opt[i][j]=0;
+            }
+            else if (j>=tasks[i-1]){
+                opt[i][j]=max(opt[i-1][j],weights[i-1]+opt[i-1][j-tasks[i-1]]);
+            }
+            else{
+                opt[i][j]=opt[i-1][j];
+            }
+        }
+    }
+    return opt[n][p];
+}
+
 int main() 
 { 
     

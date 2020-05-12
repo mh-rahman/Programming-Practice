@@ -1,2 +1,2 @@
 # Programming-Practice
-Programming practice - various algorithms, hackerrank challenges
+Programming practice - Leetcode programs, hackerrank challenges

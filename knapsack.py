@@ -42,9 +42,9 @@ print(opt[n][m])
 
 
 def maximumTotalWeight(weights, tasks, p):
-    def knapSack(W, wt, val, n): 
+    def knapSack(W, wt, val): 
         K = [[0 for x in range(W+1)] for x in range(n+1)] 
-    
+        n = len(wt)
         # Build table K[][] in bottom up manner 
         for i in range(n+1): 
             for w in range(W+1): 
@@ -56,6 +56,7 @@ def maximumTotalWeight(weights, tasks, p):
                     K[i][w] = K[i-1][w] 
     
         return K[n][W] 
+        
     for i in range(len(tasks)):
         tasks[i] = 2*tasks[i]
-    return(knapSack(p, tasks, weights, len(tasks)))
+    return knapSack(p, tasks, weights)

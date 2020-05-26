@@ -1,5 +1,6 @@
+import collections
 class Solution:
-    def fourSumCount(self, A: List[int], B: List[int], C: List[int], D: List[int]) -> int:
+    def fourSumCount(self, A, B, C, D) -> int:
         
         if not A and not B and not C and not D:
             return 0

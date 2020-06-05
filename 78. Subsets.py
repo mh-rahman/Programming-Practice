@@ -7,5 +7,13 @@ class Solution:
         for _ in range(2**len(nums)):
             res+=[s+[c] for s in res for c in nums if s and c not in s and c>s[-1] and s+[c] not in res]
         # print(res)
-            
+        return res
+
+    
+    def fastersubsets(self, nums: List[int]) -> List[List[int]]:
+        res = [[]]
+        nums.sort()
+        res+=[[c] for c in nums]
+        for c in nums:
+            res+=[s+[c] for s in res if s and c>s[-1] ]
         return res

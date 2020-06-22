@@ -13,9 +13,7 @@ class Solution:
                 elif j < col-1:
                     prev = d[i][j+1]
                 d[i][j] = max(1,prev-d[i][j])
-                
-        print(d)
-        
+                        
         ##Greedy - 36/45
         while False:
 #             row, col = len(d), len(d[0])
@@ -61,5 +59,4 @@ class Solution:
 #             return max(1,req[-1][-1][-1])
             pass
         
-        return d[0][0]
         return d[0][0]

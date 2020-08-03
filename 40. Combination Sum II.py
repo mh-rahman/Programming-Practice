@@ -53,31 +53,7 @@ class Solution:
         helper(nums, target, 0, [], 0, res)
         
         return res
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         
         
     def strignHashingCombinationSum2(self, nums: List[int], target: int) -> List[List[int]]:
